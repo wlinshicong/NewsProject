@@ -16,6 +16,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"%@",self.newsUrl);
     webView = [[UIWebView alloc]initWithFrame:self.view.frame];
     [webView setUserInteractionEnabled:YES];//是否支持交互
     //[webView setDelegate:self];
@@ -26,8 +27,8 @@
     
     //加载网页的方式
     //1.创建并加载远程网页
-    NSURL *url = [NSURL URLWithString:@"http://world.gmw.cn/newspaper/2015-03/17/content_105205337.htm"];
-    [webView loadRequest:[NSURLRequest requestWithURL:url]];
+//    NSURL *url = [NSURL URLWithString:@"http://world.gmw.cn/newspaper/2015-03/17/content_105205337.htm"];
+        [webView loadRequest:[NSURLRequest requestWithURL:self.newsUrl]];
     //2.加载本地文件资源
     /* NSURL *url = [NSURL fileURLWithPath:filePath];
      NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -61,13 +62,13 @@
 
 //UIWebView如何判断 HTTP 404 等错误
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-    NSURL *url = [NSURL URLWithString:@"http://world.gmw.cn/newspaper/2015-03/17/content_105205337.htm"];
+//    NSURL *url = [NSURL URLWithString:@"http://world.gmw.cn/newspaper/2015-03/17/content_105205337.htm"];
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
     if ((([httpResponse statusCode]/100) == 2)) {
         // self.earthquakeData = [NSMutableData data];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
-        [ webView loadRequest:[ NSURLRequest requestWithURL: url]];
+        [ webView loadRequest:[ NSURLRequest requestWithURL: self.newsUrl]];
         webView.delegate = self;
     } else {
         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:

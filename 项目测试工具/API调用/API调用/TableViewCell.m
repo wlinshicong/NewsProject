@@ -12,7 +12,17 @@
 
 -(instancetype)initWithDict:(NSDictionary *)dict{
     TableViewCell *cell=[[TableViewCell alloc]init];
-    [cell setValuesForKeysWithDictionary:dict];
+    cell.channelId=dict[@"channelId"];
+    cell.channelName=dict[@"channelName"];
+    cell.desc=dict[@"desc"];
+
+    cell.imageurls=dict[@"imageurls"];
+    cell.link=dict[@"link"];
+    cell.nid=dict[@"nid"];
+    cell.pubDate=dict[@"pubDate"];
+    cell.source=dict[@"source"];
+    cell.title=dict[@"title"];
+
     return cell;
 }
 - (void)awakeFromNib {

@@ -12,7 +12,7 @@
 @property(nonatomic,copy)NSString *channelId;
 @property(nonatomic,copy)NSString *channelName;
 @property(nonatomic,copy)NSString *desc;
-@property(nonatomic,copy)NSString *imageurls;
+@property(nonatomic,copy)NSMutableArray *imageurls;
 @property(nonatomic,copy)NSString *link;
 @property(nonatomic,copy)NSString *nid;
 @property(nonatomic,copy)NSString *pubDate;

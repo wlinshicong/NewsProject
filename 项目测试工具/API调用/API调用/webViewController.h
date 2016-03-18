@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface webViewController : UIViewController
+
 {
     IBOutlet UIWebView *webView;
     
     UIActivityIndicatorView *activityIndicatorView;
     UIView *opaqueView;
 }
+@property(nonatomic,strong)NSURL *newsUrl;
 
 @end
