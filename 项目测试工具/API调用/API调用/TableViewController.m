@@ -10,6 +10,7 @@
 #import "requestUrl.h"
 #import "TableViewCell.h"
 #import "webViewController.h"
+#import "SDWebImage/UIImageView+WebCache.h"
 @interface TableViewController ()
 @property(nonatomic,strong)NSMutableArray *allNews;
 @end
@@ -68,7 +69,7 @@
                                }
                            }];
 }
-
+//给allNews赋值
 -(void)reloadCellWithData:data{
     
     
@@ -95,11 +96,20 @@
     //创建一个数组接收所有新闻表格数据
     //再赋值给allNews数组
     NSMutableArray *arr=[NSMutableArray array];
+    
+    
+    
     for(NSDictionary *newsDict in NewsArray){
         
         TableViewCell *cell=[[TableViewCell alloc]init];
         cell=[cell initWithDict:newsDict];
-        [arr addObject:cell];
+        //先判断图像数组是否为空,没有图片就不要这个新闻了
+        NSArray *imageArr=cell.imageurls;
+        NSLog(@"1%lu",arr.count);
+        //图片数组不为0才下载图片,加载这个新闻
+        if (imageArr.count>0) {
+            [arr addObject:cell];
+        }
     }
     self.allNews=arr;
   
@@ -119,14 +129,14 @@
     //    self.window.backgroundColor = [UIColor whiteColor];
     webViewController *web = [[webViewController alloc]init];
     //    self.window.rootViewController = web;
-    NSLog(@"%d",indexPath.row);
-    NSLog(@"%@",self.allNews[indexPath.row]);
+    NSLog(@"%lu",indexPath.row);
+   // NSLog(@"%@",self.allNews[indexPath.row]);
     TableViewCell *cell=self.allNews[indexPath.row];
     
-      NSLog(@"%@",cell.link);
+      //NSLog(@"%@",cell.link);
     web.newsUrl=[NSURL URLWithString:cell.link];
     [self presentViewController:web animated:YES completion:nil];
-     NSLog(@"---%@", web.newsUrl);
+     //NSLog(@"---%@", web.newsUrl);
 }
 
 
@@ -151,33 +161,40 @@
     }
     
     TableViewCell *tcell=self.allNews[indexPath.row];
+//    NSLog(@"%@",tcell);
     NSArray *arr=tcell.imageurls;
-    NSLog(@"%lu",arr.count);
-    if (arr.count>0) {
-        NSDictionary *dict=arr[0];
-         NSString *url=dict[@"url"];
-         NSLog(@"---%@",url);
-        NSURLSession *session=[NSURLSession sharedSession];
-        //NSURLRequest *ruquest=[NSURLRequest requestWithURL:url];
-        NSURLSessionDataTask *task=[session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            
-            [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-                UIImage *image=[UIImage imageWithData:data];
+//    NSLog(@"数量2%lu",arr.count);
+//    NSLog(@"下标%ld",(long)indexPath.row);
 
-                [self.tableView reloadData];
-                
-            }];
-            
-         
-        }];
+    
+    //取出第一张图片的信息,数组里可能有一张或者2,3张图片
+    NSDictionary *dict=arr[0];
+    NSString *url=dict[@"url"];
+    
+
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"defaultAlbumSmall"]];
+
         
-    }
+//            
+//            [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+//                UIImage *image=[UIImage imageWithData:data];
+//
+//                [self.tableView reloadData];
+//                
+       
+        
+         
+//        }];
+        
+    //  `}
 
 
   
     cell.textLabel.text=tcell.title;
-        cell.detailTextLabel.text=cell.description;
-    // Configure the cell...
+    cell.textLabel.font=[UIFont systemFontOfSize:15];
+    cell.textLabel.numberOfLines=0;
+//    cell.detailTextLabel.text=tcell.desc;
+//    NSLog(@"描述%@",tcell.desc);
     
     return cell;
 }

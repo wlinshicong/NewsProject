@@ -1,6 +1,6 @@
 #import "webViewController.h"
 
-@interface webViewController ()
+@interface webViewController ()<UIWebViewDelegate>
 @end
 
 @implementation webViewController
