@@ -19,7 +19,6 @@
 		C83469361C9984E300084642 /* NEWSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C83469351C9984E300084642 /* NEWSTests.m */; };
 		C83469411C9984E300084642 /* NEWSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C83469401C9984E300084642 /* NEWSUITests.m */; };
 		C83469501C99854200084642 /* NEWSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C834694F1C99854200084642 /* NEWSTableViewController.m */; };
-		C834695B1C9987C600084642 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = C834695A1C9987C600084642 /* News.m */; };
 		C864F8BD1C9A434600484FBE /* WebNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C864F8BC1C9A434600484FBE /* WebNewsViewController.m */; };
 		C86A52391CA4D5C50071C835 /* KWDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C86A52361CA4D5C50071C835 /* KWDataManager.m */; };
 		C86A523A1CA4D5C50071C835 /* KWNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C86A52381CA4D5C50071C835 /* KWNetworkManager.m */; };
@@ -39,6 +38,7 @@
 		C86A52821CA4E6270071C835 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C86A52701CA4E6270071C835 /* UIImageView+HighlightedWebCache.m */; };
 		C86A52831CA4E6270071C835 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C86A52721CA4E6270071C835 /* UIImageView+WebCache.m */; };
 		C86A52841CA4E6270071C835 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C86A52741CA4E6270071C835 /* UIView+WebCacheOperation.m */; };
+		D3DCF0461CA63CA0003E74D9 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DCF0451CA63CA0003E74D9 /* News.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +84,6 @@
 		C83469421C9984E300084642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C834694E1C99854200084642 /* NEWSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEWSTableViewController.h; sourceTree = "<group>"; };
 		C834694F1C99854200084642 /* NEWSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEWSTableViewController.m; sourceTree = "<group>"; };
-		C83469591C9987C600084642 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = News.h; path = ../News.h; sourceTree = "<group>"; };
-		C834695A1C9987C600084642 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = News.m; path = ../News.m; sourceTree = "<group>"; };
 		C864F8BB1C9A434600484FBE /* WebNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebNewsViewController.h; sourceTree = "<group>"; };
 		C864F8BC1C9A434600484FBE /* WebNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebNewsViewController.m; sourceTree = "<group>"; };
 		C86A52351CA4D5C50071C835 /* KWDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWDataManager.h; sourceTree = "<group>"; };
@@ -126,6 +124,8 @@
 		C86A52721CA4E6270071C835 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		C86A52731CA4E6270071C835 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		C86A52741CA4E6270071C835 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		D3DCF0441CA63CA0003E74D9 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = News.h; path = NEWS/News.h; sourceTree = SOURCE_ROOT; };
+		D3DCF0451CA63CA0003E74D9 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = News.m; path = NEWS/News.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,8 +221,8 @@
 		C864F8BE1C9A436700484FBE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C83469591C9987C600084642 /* News.h */,
-				C834695A1C9987C600084642 /* News.m */,
+				D3DCF0441CA63CA0003E74D9 /* News.h */,
+				D3DCF0451CA63CA0003E74D9 /* News.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,7 +463,6 @@
 				C86A527E1CA4E6270071C835 /* UIButton+WebCache.m in Sources */,
 				C86A527D1CA4E6270071C835 /* SDWebImagePrefetcher.m in Sources */,
 				C86A527B1CA4E6270071C835 /* SDWebImageDownloaderOperation.m in Sources */,
-				C834695B1C9987C600084642 /* News.m in Sources */,
 				C86A523A1CA4D5C50071C835 /* KWNetworkManager.m in Sources */,
 				C86A52801CA4E6270071C835 /* UIImage+MultiFormat.m in Sources */,
 				C834691D1C9984E300084642 /* main.m in Sources */,
@@ -471,6 +470,7 @@
 				C86A52771CA4E6270071C835 /* SDImageCache.m in Sources */,
 				C864F8BD1C9A434600484FBE /* WebNewsViewController.m in Sources */,
 				C82BA0421CA50C9D00E02607 /* KWMeTableViewController.m in Sources */,
+				D3DCF0461CA63CA0003E74D9 /* News.m in Sources */,
 				C86A527F1CA4E6270071C835 /* UIImage+GIF.m in Sources */,
 				C86A527A1CA4E6270071C835 /* SDWebImageDownloader.m in Sources */,
 				C86A52831CA4E6270071C835 /* UIImageView+WebCache.m in Sources */,

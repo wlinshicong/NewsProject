@@ -15,7 +15,8 @@
 
 /*--------------新闻界面1--------------*/
 
-@interface NEWSTableViewController ()
+@interface NEWSTableViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *NewsListTableView;
 @property(nonatomic,strong) NSMutableArray *allNews;
 @end
 
@@ -30,8 +31,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.rowHeight=70;
+    self.NewsListTableView.rowHeight=70;
     [self network];
+    //因为现在是viewcontroller,所以需要设置一个tableviewcontroller来管理tableView.并且设置代理
+    UITableViewController *tbVC=[[UITableViewController alloc]initWithStyle:UITableViewStylePlain];
+    tbVC.tableView=self.NewsListTableView;
+    self.NewsListTableView.delegate=self;
+    self.NewsListTableView.dataSource=self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,21 +51,25 @@
 
 //获取网络数据
 -(void)network{
+    NSLog(@"加载数据");
     [KWNetworkManager sendRequestWithUrl:HTTPURL withHttpArg:HTTPARG success:^(NSData *data, id response) {
         NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
         NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"HttpResponseCode:%ld", responseCode);
-        NSLog(@"HttpResponseBody %@",responseString);
+       // NSLog(@"HttpResponseCode:%ld", responseCode);
+       // NSLog(@"HttpResponseBody %@",responseString);
         
         //解析返回的data
         NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        self.allNews=[KWDataManager getAllNewsData:dict];
-        NSLog(@"%@",self.allNews);
+       //每次调用都讲返回的数组叠加到原来的数组上---林思聪
+        NSArray *tempArr=[KWDataManager getAllNewsData:dict];
+        [self.allNews addObjectsFromArray:tempArr];
+        NSLog(@"%lu",(unsigned long)self.allNews.count);
+        
         [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-            [self.tableView reloadData];
+            [self.NewsListTableView reloadData];
         }];
     } failure:^(NSError *error) {
-        NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+        //NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
     }];
 }
 
@@ -75,6 +85,14 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+   //如继续下拉,且下拉的行数等于现在的数组行数,则请求加载更多的新闻数据叠加到数组中-----林思聪
+    NSLog(@"%lu,%lu",indexPath.row,self.allNews.count);
+    if (indexPath.row==self.allNews.count-1) {
+        
+        [self network];
+    }
+    
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
     NSObject *model=self.allNews[indexPath.row];
     if ([model isKindOfClass:[News class]]) {
@@ -86,6 +104,7 @@
         nLabel.frame=CGRectMake(76, 4, 227, 29);
         nLabel.font=[UIFont systemFontOfSize:15];
         nLabel.text=news.title;
+        NSLog(@"%@",nLabel.text);
         nLabel.numberOfLines=0;
         nLabel.font=[UIFont systemFontOfSize:15];
         

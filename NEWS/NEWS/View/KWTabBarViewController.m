@@ -43,6 +43,7 @@
 }
 
 //解决tabBar无法改变选中图片
+//只能在代码中同时设置正常状态跟选中状态的图片,在sb里面不能设置正常或者选中图片,否则代码设置的不起作用
 -(void)setTabBarItem:(UITabBarItem *)tabBarItem title:(NSString*)title normalImage:(NSString*)normal selectImage:(NSString*)select{
     UIImage * homenormalImage = [[UIImage imageNamed:normal]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage * homeselectImage = [[UIImage imageNamed:select]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

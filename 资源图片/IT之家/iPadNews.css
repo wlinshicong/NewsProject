@@ -1,0 +1,502 @@
+<style type="text/css">
+html,body{-webkit-touch-callout: none;}
+body,h1,p,video,ul,li,input,textarea,dl,dt,dd{
+    margin:0;
+    padding:0;
+}
+body{
+/*    font-family:arial,sans-serif;*/
+    font-family:arial,sans-serif;
+    font-size:#fontsize#px;
+    color: #303030;
+    background: #f8f8f8;
+    text-align:justify;
+    text-justify:distribute;
+}
+.night{
+    color:#aeaeae;
+    background:#2b2b2b;
+}
+a{
+    color:blue;
+    text-decoration:none;
+}
+.night a{
+    color:#999;
+    text-decoration:underline;
+}
+a:active{
+    color:#06F;
+}
+
+.wrap{
+    padding:18px 33px 0px 33px;
+}
+
+img{
+    border:0;
+    opacity:1.0;
+}
+
+.night img{
+    opacity:0.7;
+}
+
+/* Post Style */
+.title{
+    margin-top: 10px;
+    border-bottom:1px #e7e7e7 solid;
+    padding-bottom:32px;
+}
+
+.night .title{
+    border-bottom:1px #585858 solid;
+}
+
+.title h1{
+    font-weight:600;
+    display:block;
+    padding:1px 0 15px 0;
+    font-size: 22px;
+    text-align: left;
+    color:#000000;
+}
+
+.night .title h1{
+    color:#c2c2c2;
+}
+
+.title h1:before {
+    content:'';
+    display:inline-block;
+    float:left;
+    width:4px;
+    height:27px;
+    margin:2px 8px -2px 2px;
+    background-color:#d22222;
+    overflow:visible;
+}
+.night .title h1:before{
+    background-color:#bd1f1f;
+}
+
+.title .source{
+    clear:both;
+    float:left;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: left;
+    font-size: 10px;
+    color: #8a8a8a;
+}
+
+.night .title .source{
+    color: #9f9f9f;
+}
+
+.title .newszebian{
+    float:right;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: right;
+    font-size: 10px;
+    color: #8a8a8a;
+}
+
+.night .title .newszebian{
+    color: #9f9f9f;
+}
+
+.title .yuanchuang{
+    display: inline-block;
+    float:left
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 2px;
+    margin-left: 6px;
+    margin-top:[ios9]1px;
+    /*text-align: center;
+     font-size: 9px;*/
+    background-color: clear;
+    /*color: #fd9b43;
+     border:0.5px #fd9b43 solid;*/
+}
+
+.night .title .yuanchuang{
+    background-color: clear;
+    /*color: #bf7532;
+     border:0.5px #bf7532 solid;*/
+}
+
+.title .yuanchuang img
+{
+    width:20px;
+    height:11px;
+    margin-top:1px;
+    opacity:1.0;
+}
+
+.night .title .yuanchuang img
+{
+    opacity:0.7;
+}
+
+.title .newszebian span{
+    display:inline-block;
+    padding-left:0px;
+    color:#8a8a8a;
+    font-size: 10px;
+}
+
+.night .title .newszebian span{
+    color: #9f9f9f;
+}
+
+/*阅读量*/
+.title .newszebian .newshitcount{
+    float:right;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left:20px;
+    text-align: right;
+    font-size: 10px;
+    color: #8a8a8a;
+}
+.night .title .newszebian .newshitcount{
+    color: #9f9f9f;
+}
+.title .newszebian .newshitcount img
+{
+    width:13px;
+    height:10px;
+    margin-top: -3px;
+    margin-bottom:-1px;
+    opacity:1.0;
+}
+.night .title .newszebian .newshitcount img{
+    opacity:0.78;
+}
+.title .newszebian .newshitcount a{
+    padding-left:3px;
+    color:#8a8a8a;
+    font-size: 10px;
+}
+.night .title .newszebian .newshitcount a{
+    color: #9f9f9f;
+    text-decoration:none;
+}
+
+.content{
+    padding-top:20px;
+}
+.content p{
+    word-break:break-word;
+    padding:0 0 15px 0;
+    line-height:150%;
+    font-size:#fontsize#
+}
+.content p img{
+    display:block;
+    margin:0 auto;
+    max-width:600px;
+    text-align:center;
+}
+.content p a{
+    text-decoration: underline;
+}
+.content p a.s_tag{
+    text-decoration: none;
+    color:#333;
+}
+.night .content p a.s_tag{
+    color:#aaa;
+}
+
+/* 轮播广告*/
+.banner {
+    clear:both;
+    position: relative;
+    width: #imgwidth#px;
+    height: #imgheight#px;
+    overflow: hidden;
+    display:block;
+    margin:0 auto;
+}
+
+.banner ol, .banner ul, .banner li {
+    padding: 0;
+    margin: 0;
+}
+
+.banner ol {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.banner li {
+    width: #imgwidth#px;
+    height: #imgheight#px;
+}
+
+.banner img {
+    width: #imgwidth#px;
+    height: #imgheight#px;
+    margin: 0px;
+    border: 0px;
+}
+
+.night .banner li {
+    opacity: 0.7;
+}
+
+/*乐视视频样式*/
+figure {
+    margin:0px;
+    padding:0px;
+}
+
+.related_post{
+    margin:0 0px;
+}
+.related_post h2{
+    height:34px;
+    margin:0,0px;
+    padding:0 33px;
+    line-height:34px;
+    font-size:18px;
+    color:#000000;
+    background:#e4e4e4;
+}
+.related_post ul{
+    margin:0px 33px 10px 33px;
+    padding:0;
+}
+.related_post ul li{
+    clear:both;
+    padding:11px 0px 5px 0px;
+    list-style:none;
+    font-size:16px;
+    color:#888;
+    overflow:hidden;
+    border-bottom:1px solid #e7e7e7;
+}
+.related_post ul li:active{
+    background:#f8f8f8;
+}
+.related_post ul li a{
+    display:block;
+    padding-right:0px;
+    padding-left:0px;
+    color:#000;
+    text-decoration:none;
+    overflow:hidden;
+}
+.related_post ul li:last-child{
+    border-bottom-style:none;
+}
+.related_post ul li .date {
+    display:block;
+    padding-right:0px;
+    padding-left: 0px;
+    color:#aaaaaa;
+    text-decoration:none;
+    overflow:hidden;
+    font-size:11px;
+    margin-top:5px;
+}
+
+.night .related_post h2{
+    color:#aaaaaa;
+    background:#383838;
+}
+.night .related_post ul li:active{
+    background:#111;
+}
+.night .related_post ul li{
+    color:#aeaeae;
+    overflow:hidden;
+    border-bottom:1px solid #585858;
+}
+
+.night .related_post ul li:last-child{
+    border-bottom-style:none;
+}
+.night .related_post ul li:active{
+    background:#f4f4f4;
+}
+.night .related_post ul li a{
+    color:#aeaeae;
+}
+.night .related_post ul li .date {
+    color:#8a8a8a;
+}
+
+/*最热评论区域*/
+#newshotcomment
+{
+    margin-top:12px;
+}
+/*评论总标题 热门评论 */
+#newshotcomment h3.icon2{
+    height:34px;
+    margin:0,0px;
+    padding:0 33px;
+    line-height:34px;
+    font-size:18px;
+    color:#000000;
+    background:#e4e4e4;
+}
+
+.night #newshotcomment h3.icon2{
+    color:#aaaaaa;
+    background:#383838;
+}
+
+#newshotcomment ul.list{
+    margin:0px 33px 10px 33px;
+    padding:0px;
+}
+
+/*列表中的一条评论*/
+#newshotcomment ul.list li.entry{
+    width:100%;
+    border-top:none;
+    border-bottom:1px #e7e7e7 solid;
+    overflow:hidden;
+    margin:0px;
+    padding:0px;
+    padding-bottom: 12px;
+    padding-top: 6px;
+}
+
+.night #newshotcomment ul.list li.entry{
+    border-bottom:1px #585858 solid;
+}
+
+#newshotcomment ul.list li.entry:first-child{
+    border-top:0;
+}
+/****************************************************************************************************/
+/****************************************************************************************************/
+
+/*一条评论的名称、地理位置头像时间等所有信息*/
+#newshotcomment ul.list li.entry .info{
+    display:block;
+    padding:10px 0 5px 0;
+    font-size:12px;
+    color:#555;
+    overflow:hidden;
+}
+.night #newshotcomment ul.list li.entry .info{
+    color:#999;
+}
+/*头像*/
+#newshotcomment ul.list li.entry .headerimage{
+    display:inline-block;
+    width:25px;
+    height:25px;
+    border-radius:12.5px;
+    float:left;
+    overflow:hidden;
+    opacity:1.0;
+}
+
+.night #newshotcomment ul.list li.entry .headerimage{
+    opacity:0.7;
+}
+
+/*用户名与设备*/
+#newshotcomment ul.list li.entry .nameanddev{
+    display:inline-block;
+    float:left;
+    padding-left:5px;
+}
+/*顶*/
+#newshotcomment ul.list li.entry .dingcount{
+    display:inline-block;
+    float:right;
+    color:#8a8a8a;
+    padding-right:8px;
+    font-size:14px;
+}
+
+.night #newshotcomment ul.list li.entry .dingcount{
+    color:#9f9f9f;
+}
+/*位置与时间*/
+#newshotcomment ul.list li.entry .posandtime{
+    clear:left;
+    float:left;
+    color:#8a8a8a;
+    font-size:13px;
+    padding-top:2px;
+    padding-left:5px;
+    margin-left:25px;
+    margin-top: -5px;
+}
+
+.night #newshotcomment ul.list li.entry .posandtime{
+    color:#9f9f9f;
+}
+/*单个评论强调字体 包括楼层号，用户名等*/
+#newshotcomment ul.list li.entry .info strong{
+    padding-right:6px;
+}
+/*用户名*/
+#newshotcomment ul.list li.entry .rmp strong.nick a{
+    font-size:15px;
+    color:#4780dd;
+    opacity:1.0;
+    text-decoration:none;
+}
+.night #newshotcomment ul.list li.entry .rmp strong.nick a{
+    opacity:0.7;
+}
+#newshotcomment ul.list li.entry .rmpvip strong.nick a{
+    padding-right:22px;
+    font-size:16px;
+    color:#ea6415;
+    background:url(rmpvip_icon.svg) right center no-repeat;
+    opacity:1.0;
+    text-decoration:none;
+}
+.night #newshotcomment ul.list li.entry .rmpvip strong.nick a{
+    opacity:0.7;
+}
+
+/****************************************************************************************************/
+
+/*评论内容*/
+#newshotcomment ul.list li.entry p{
+    clear:both;
+    padding:5px 10px 0 30px;
+    line-height:150%;
+    word-wrap:break-word;
+    color:#000;
+    font-size:16px;
+}
+.night #newshotcomment ul.list li.entry p{
+    color:#aeaeae;
+}
+
+/*更多评论区域*/
+#newshotcomment .more_comm{
+    margin:0px 33px 10px 33px;
+    height:52px;
+}
+#newshotcomment .more_comm a{
+    display:block;
+    width:100%;
+    height:52px;
+    margin:0 auto;
+    line-height:52px;
+    color:#848484;
+    text-decoration:none;
+    text-align: center;
+}
+.night #newshotcomment .more_comm a{
+    color:#9f9f9f;
+}
+</style>
