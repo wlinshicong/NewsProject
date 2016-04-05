@@ -25,6 +25,7 @@
     [super viewDidLoad];
     
     self.contentUrl=self.url;
+    NSLog(@"%@",self.contentUrl);
     self.webView.scalesPageToFit=YES;
     self.webView.dataDetectorTypes=UIDataDetectorTypeAll;
     

@@ -11,7 +11,7 @@
 #import "KWNetworkManager.h"
 #import "KWDataManager.h"
 #import "WebNewsViewController.h"
-#import "UIImageView+WebCache.h"
+
 
 /*--------------新闻界面1--------------*/
 
