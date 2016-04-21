@@ -1,30 +1,23 @@
 //
-//  NEWSViewController.m
+//  KWComputerNewsTableViewController.m
 //  NEWS
 //
-//  Created by tarena006 on 16/3/16.
+//  Created by tarena05 on 16/4/14.
 //  Copyright © 2016年 tarena. All rights reserved.
 //
 
-#import "NEWSViewController.h"
+#import "KWComputerNewsTableViewController.h"
 #import "News.h"
 #import "KWNetworkManager.h"
 #import "KWDataManager.h"
 #import "WebNewsViewController.h"
 
 
-/*--------------新闻界面1--------------*/
-
-@interface NEWSViewController ()<UITableViewDelegate,UITableViewDataSource>
-
-@property (weak, nonatomic) IBOutlet UITableView *NewsListTableView;
-
+@interface KWComputerNewsTableViewController ()
 @property(nonatomic,strong) NSMutableArray *allNews;
-
 @end
 
-@implementation NEWSViewController
-
+@implementation KWComputerNewsTableViewController
 -(NSMutableArray *)allNews{
     if (!_allNews) {
         _allNews=[NSMutableArray array];
@@ -32,26 +25,16 @@
     return _allNews;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.NewsListTableView.rowHeight=70;
     
-    //因为现在是viewcontroller,所以需要设置一个tableviewcontroller来管理tableView.并且设置代理
-    UITableViewController *tbVC=[[UITableViewController alloc]initWithStyle:UITableViewStylePlain];
-    tbVC.tableView=self.NewsListTableView;
-    self.NewsListTableView.delegate=self;
-    self.NewsListTableView.dataSource=self;
-    
-    [self network];
+   [self network];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    //从webView回来时打开隐藏的NavigationBar
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    // Dispose of any resources that can be recreated.
 }
 
 //获取网络数据
@@ -71,7 +54,7 @@
         NSLog(@"%lu",(unsigned long)self.allNews.count);
         
         [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-            [self.NewsListTableView reloadData];
+            [self.tableView reloadData];
         }];
     } failure:^(NSError *error) {
         NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
@@ -119,6 +102,7 @@
         nDLabel.frame=CGRectMake(76, 34, 227, 20);
         nDLabel.font=[UIFont systemFontOfSize:12];
         nDLabel.text=news.ctime;
+        NSLog(@"----nDlabel==%@",nDLabel.text);
         nDLabel.font=[UIFont systemFontOfSize:10];
         
         UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height)];
@@ -139,48 +123,60 @@
     [self.navigationController pushViewController:wvc animated:YES];
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
+
 
 /*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+*/
 
 /*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
 
 /*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
 
 /*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

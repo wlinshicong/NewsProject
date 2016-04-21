@@ -16,13 +16,14 @@
 		C83469201C9984E300084642 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C834691F1C9984E300084642 /* AppDelegate.m */; };
 		C83469361C9984E300084642 /* NEWSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C83469351C9984E300084642 /* NEWSTests.m */; };
 		C83469411C9984E300084642 /* NEWSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C83469401C9984E300084642 /* NEWSUITests.m */; };
-		C8541DA11CA9405B0071D171 /* KWDiscoveryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8541D961CA9405B0071D171 /* KWDiscoveryTableViewController.m */; };
-		C8541DA21CA9405B0071D171 /* KWITTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8541D981CA9405B0071D171 /* KWITTableViewController.m */; };
-		C8541DA31CA9405B0071D171 /* KWMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8541D9A1CA9405B0071D171 /* KWMeTableViewController.m */; };
-		C8541DA51CA9405B0071D171 /* NEWSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8541D9E1CA9405B0071D171 /* NEWSViewController.m */; };
-		C8541DA61CA9405B0071D171 /* WebNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8541DA01CA9405B0071D171 /* WebNewsViewController.m */; };
 		C8541DAD1CA9407B0071D171 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8541DA91CA9407B0071D171 /* Info.plist */; };
 		C8541DAE1CA9407B0071D171 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8541DAA1CA9407B0071D171 /* main.m */; };
+		D3B0232C1CBFBD92002E73EE /* NEWSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B023291CBFBD92002E73EE /* NEWSViewController.m */; };
+		D3B0232D1CBFBD92002E73EE /* WebNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B0232B1CBFBD92002E73EE /* WebNewsViewController.m */; };
+		D3B023311CBFBDCE002E73EE /* KWDiscoveryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B023301CBFBDCE002E73EE /* KWDiscoveryTableViewController.m */; };
+		D3B023381CBFBDEB002E73EE /* KWMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B023341CBFBDEB002E73EE /* KWMeTableViewController.m */; };
+		D3B023391CBFBDEB002E73EE /* KWITTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B023371CBFBDEB002E73EE /* KWITTableViewController.m */; };
+		D3B0233F1CBFC07B002E73EE /* KWComputerNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B0233E1CBFC07B002E73EE /* KWComputerNewsTableViewController.m */; };
 		F7C0E061EA8FE209A79BC35D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B68238D46826F61332BEF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,20 +65,22 @@
 		C834693C1C9984E300084642 /* NEWSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NEWSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C83469401C9984E300084642 /* NEWSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEWSUITests.m; sourceTree = "<group>"; };
 		C83469421C9984E300084642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8541D951CA9405B0071D171 /* KWDiscoveryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWDiscoveryTableViewController.h; sourceTree = "<group>"; };
-		C8541D961CA9405B0071D171 /* KWDiscoveryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWDiscoveryTableViewController.m; sourceTree = "<group>"; };
-		C8541D971CA9405B0071D171 /* KWITTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWITTableViewController.h; sourceTree = "<group>"; };
-		C8541D981CA9405B0071D171 /* KWITTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWITTableViewController.m; sourceTree = "<group>"; };
-		C8541D991CA9405B0071D171 /* KWMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWMeTableViewController.h; sourceTree = "<group>"; };
-		C8541D9A1CA9405B0071D171 /* KWMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWMeTableViewController.m; sourceTree = "<group>"; };
-		C8541D9D1CA9405B0071D171 /* NEWSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEWSViewController.h; sourceTree = "<group>"; };
-		C8541D9E1CA9405B0071D171 /* NEWSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEWSViewController.m; sourceTree = "<group>"; };
-		C8541D9F1CA9405B0071D171 /* WebNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebNewsViewController.h; sourceTree = "<group>"; };
-		C8541DA01CA9405B0071D171 /* WebNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebNewsViewController.m; sourceTree = "<group>"; };
 		C8541DA91CA9407B0071D171 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8541DAA1CA9407B0071D171 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C8541DAB1CA9407B0071D171 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C8541DB41CA940EC0071D171 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		D3B023281CBFBD92002E73EE /* NEWSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEWSViewController.h; sourceTree = "<group>"; };
+		D3B023291CBFBD92002E73EE /* NEWSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEWSViewController.m; sourceTree = "<group>"; };
+		D3B0232A1CBFBD92002E73EE /* WebNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebNewsViewController.h; sourceTree = "<group>"; };
+		D3B0232B1CBFBD92002E73EE /* WebNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebNewsViewController.m; sourceTree = "<group>"; };
+		D3B0232F1CBFBDCE002E73EE /* KWDiscoveryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWDiscoveryTableViewController.h; sourceTree = "<group>"; };
+		D3B023301CBFBDCE002E73EE /* KWDiscoveryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWDiscoveryTableViewController.m; sourceTree = "<group>"; };
+		D3B023331CBFBDEB002E73EE /* KWMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWMeTableViewController.h; sourceTree = "<group>"; };
+		D3B023341CBFBDEB002E73EE /* KWMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWMeTableViewController.m; sourceTree = "<group>"; };
+		D3B023361CBFBDEB002E73EE /* KWITTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWITTableViewController.h; sourceTree = "<group>"; };
+		D3B023371CBFBDEB002E73EE /* KWITTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWITTableViewController.m; sourceTree = "<group>"; };
+		D3B0233D1CBFC07B002E73EE /* KWComputerNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWComputerNewsTableViewController.h; sourceTree = "<group>"; };
+		D3B0233E1CBFC07B002E73EE /* KWComputerNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWComputerNewsTableViewController.m; sourceTree = "<group>"; };
 		D99B68238D46826F61332BEF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC8A2052F53190D963E54FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,16 +234,10 @@
 		C8541D941CA9405B0071D171 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C8541D9D1CA9405B0071D171 /* NEWSViewController.h */,
-				C8541D9E1CA9405B0071D171 /* NEWSViewController.m */,
-				C8541D971CA9405B0071D171 /* KWITTableViewController.h */,
-				C8541D981CA9405B0071D171 /* KWITTableViewController.m */,
-				C8541D951CA9405B0071D171 /* KWDiscoveryTableViewController.h */,
-				C8541D961CA9405B0071D171 /* KWDiscoveryTableViewController.m */,
-				C8541D991CA9405B0071D171 /* KWMeTableViewController.h */,
-				C8541D9A1CA9405B0071D171 /* KWMeTableViewController.m */,
-				C8541D9F1CA9405B0071D171 /* WebNewsViewController.h */,
-				C8541DA01CA9405B0071D171 /* WebNewsViewController.m */,
+				D3B023321CBFBDEB002E73EE /* 我 */,
+				D3B023351CBFBDEB002E73EE /* IT */,
+				D3B0232E1CBFBDCE002E73EE /* 发现 */,
+				D3B023271CBFBD5C002E73EE /* 资讯 */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -262,6 +259,46 @@
 				C8541DB41CA940EC0071D171 /* Constants.h */,
 			);
 			path = Define;
+			sourceTree = "<group>";
+		};
+		D3B023271CBFBD5C002E73EE /* 资讯 */ = {
+			isa = PBXGroup;
+			children = (
+				D3B023281CBFBD92002E73EE /* NEWSViewController.h */,
+				D3B023291CBFBD92002E73EE /* NEWSViewController.m */,
+				D3B0232A1CBFBD92002E73EE /* WebNewsViewController.h */,
+				D3B0232B1CBFBD92002E73EE /* WebNewsViewController.m */,
+				D3B0233D1CBFC07B002E73EE /* KWComputerNewsTableViewController.h */,
+				D3B0233E1CBFC07B002E73EE /* KWComputerNewsTableViewController.m */,
+			);
+			path = "资讯";
+			sourceTree = "<group>";
+		};
+		D3B0232E1CBFBDCE002E73EE /* 发现 */ = {
+			isa = PBXGroup;
+			children = (
+				D3B0232F1CBFBDCE002E73EE /* KWDiscoveryTableViewController.h */,
+				D3B023301CBFBDCE002E73EE /* KWDiscoveryTableViewController.m */,
+			);
+			path = "发现";
+			sourceTree = "<group>";
+		};
+		D3B023321CBFBDEB002E73EE /* 我 */ = {
+			isa = PBXGroup;
+			children = (
+				D3B023331CBFBDEB002E73EE /* KWMeTableViewController.h */,
+				D3B023341CBFBDEB002E73EE /* KWMeTableViewController.m */,
+			);
+			path = "我";
+			sourceTree = "<group>";
+		};
+		D3B023351CBFBDEB002E73EE /* IT */ = {
+			isa = PBXGroup;
+			children = (
+				D3B023361CBFBDEB002E73EE /* KWITTableViewController.h */,
+				D3B023371CBFBDEB002E73EE /* KWITTableViewController.m */,
+			);
+			path = IT;
 			sourceTree = "<group>";
 		};
 		DD56653AF8BFF8E68236B304 /* Frameworks */ = {
@@ -458,16 +495,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C83469201C9984E300084642 /* AppDelegate.m in Sources */,
-				C8541DA21CA9405B0071D171 /* KWITTableViewController.m in Sources */,
-				C8541DA11CA9405B0071D171 /* KWDiscoveryTableViewController.m in Sources */,
+				D3B023311CBFBDCE002E73EE /* KWDiscoveryTableViewController.m in Sources */,
+				D3B0232D1CBFBD92002E73EE /* WebNewsViewController.m in Sources */,
+				D3B0233F1CBFC07B002E73EE /* KWComputerNewsTableViewController.m in Sources */,
 				C80318FC1CA8FA3600D6D5F8 /* KWNetworkManager.m in Sources */,
+				D3B023391CBFBDEB002E73EE /* KWITTableViewController.m in Sources */,
 				C803194F1CA90FBA00D6D5F8 /* UIView+Extension.m in Sources */,
-				C8541DA61CA9405B0071D171 /* WebNewsViewController.m in Sources */,
 				C80319011CA8FA4400D6D5F8 /* News.m in Sources */,
-				C8541DA31CA9405B0071D171 /* KWMeTableViewController.m in Sources */,
-				C8541DA51CA9405B0071D171 /* NEWSViewController.m in Sources */,
+				D3B0232C1CBFBD92002E73EE /* NEWSViewController.m in Sources */,
 				C8541DAE1CA9407B0071D171 /* main.m in Sources */,
 				C80318FB1CA8FA3600D6D5F8 /* KWDataManager.m in Sources */,
+				D3B023381CBFBDEB002E73EE /* KWMeTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
